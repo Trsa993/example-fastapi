@@ -1,14 +1,16 @@
 [Unit]
-Description=demo fastapi aplication
+Description=demo fastapi application
 After=network.target
 
 [Service]
 User=milos
 Group=milos
 WorkingDirectory=/home/milos/app/src/
-Enviroment="PATH=/home/milos/app/venv/bin"
-EnviromentFile=/home/milos/.env
+Environment="PATH=/home/milos/app/venv/bin"
+EnvironmentFile=/home/milos/.env
 ExecStart=/home/milos/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
 
 [Install]
 WantedBy=multi-user.target
+
+
