@@ -7,6 +7,7 @@ from .database import engine
 from .routers import user, post, auth, vote
 from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 
 # models.Base.metadata.create_all(bind=engine)
 
@@ -54,8 +55,21 @@ app.include_router(user.router)
 app.include_router(auth.router)
 app.include_router(vote.router)
 
+def generate_html_response():
+    html_content = """
+    <html>
+        <head>
+            <title>Some HTML in here</title>
+        </head>
+        <body>
+            <h1>Look ma! HTML!</h1>
+        </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content, status_code=200)
+
 @app.get("/")
 def root():
-    return {"message": "welcome to my api"}
+    return generate_html_response()
 
 
