@@ -1,12 +1,11 @@
 version: "3"
 services:
   api:
-    image: 
+    image: trsa993/fastapi
     depends_on:
       - postgres
     ports: 
       - 80:8000
-    image: trsa993/fastapi
     # env_file:
     #   - ./.env
     environment:
