@@ -70,6 +70,6 @@ def generate_html_response():
 
 @app.get("/")
 def root():
-    return generate_html_response()
+    return {"message": "hello world!"}
 
 
