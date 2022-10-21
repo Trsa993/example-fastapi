@@ -70,6 +70,6 @@ def generate_html_response():
 
 @app.get("/")
 def root():
-    return {"message": "Hello World successfully deployed frim CI/CD pipeline!"}
+    return {"message": "Hello World!"}
 
 
