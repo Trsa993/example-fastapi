@@ -7,10 +7,10 @@ SECRET_KEY = settings.secret_key
 ALGORITHM = settings.algorithm
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
 
-def test_root(client):
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == {"message": "hello world!"}
+# def test_root(client):
+#     response = client.get("/")
+#     assert response.status_code == 200
+#     assert response.json() == {"message": "hello world!"}
 
 
 def test_create_user(client):
