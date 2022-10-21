@@ -90,8 +90,7 @@ jobs:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
           password: ${{ secrets.PROD_PASSWORD }}
-          port: ${{ secrets.PORT }}
           script: |
             cd app/src
             git pull
-            sudo systemctl restart api
+            echo password | sudo -S sudo systemctl restart api
